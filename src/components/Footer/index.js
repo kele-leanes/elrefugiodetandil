@@ -17,7 +17,7 @@ function Footer() {
                 <i className="fab fa-google"></i>
                 </div>
                 <p>&copy; {moment(new Date()).format("YYYY")} - el refugio | bar serrano</p>
-                <p className='author'>designed and developed <a href='https://www.linkedin.com/in/ezequiel-leanes-4575451a3/'>Ezequiel Leanes</a></p>
+                <p className='author'>designed and developed by <a href='https://www.linkedin.com/in/ezequiel-leanes-4575451a3/'>Ezequiel Leanes</a></p>
             </div>
         </footer>
     )

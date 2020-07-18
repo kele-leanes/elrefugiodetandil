@@ -11,10 +11,10 @@ function Footer() {
             </div>
             <div className='map-wrapper'>
                 <div className='social'>
-                <i className="fab fa-facebook"></i>
-                <i className="fab fa-instagram"></i>
-                <i className="fab fa-whatsapp"></i>
-                <i className="fab fa-google"></i>
+                <a href='https://www.facebook.com/elrefugiodetandil/' target='_blank' rel="noopener noreferrer"><i className="fab fa-facebook"></i></a>
+                <a href='https://www.instagram.com/elrefugiodetandil/' target='_blank' rel="noopener noreferrer"><i className="fab fa-instagram"></i></a>
+                <a href='https://wa.me/5492494209020' target='_blank' rel="noopener noreferrer"><i className="fab fa-whatsapp"></i></a>
+                <a href='mailto:elrefugiodetandil@gmail.com' target='_blank' rel="noopener noreferrer"><i className="fab fa-google"></i></a>
                 </div>
                 <p>&copy; {moment(new Date()).format("YYYY")} - el refugio | bar serrano</p>
                 <p className='author'>designed and developed by <a href='https://www.linkedin.com/in/ezequiel-leanes-4575451a3/'>Ezequiel Leanes</a></p>

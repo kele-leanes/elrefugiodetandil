@@ -1,15 +1,29 @@
-import React from 'react'
+import React, { Component } from 'react'
 import './index.css'
 
-function ModalAlert (props) {
+class ModalAlert extends Component {
+    constructor(props){
+        super(props)
+        this.myRef = React.createRef()
+    }
+
+    componentDidMount() {
+        this.scrollToMyRef();
+    }
+
+    scrollToMyRef = () => window.scrollTo(0, this.myRef.current.offsetTop)
+    
+    render(){
         return (
-            <div className='modal'>
+            <div className='modal' ref={this.myRef} >
                 <div className='modal-msg'>
-                    <p>{props.textMsg}</p>
+                    <p>{this.props.textMsg}</p>
                 </div>
-                <button className='btn-primary' onClick={props.handler}>seguir</button>
+                <button className='btn-primary' onClick={this.props.handler}>seguir</button>
             </div>
         )
+
+    }
 
 }
 

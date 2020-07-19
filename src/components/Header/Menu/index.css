@@ -16,6 +16,8 @@ ul {
     top: 80px;
     left: 0;
     height: 140px;
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
 }
 
 .items {

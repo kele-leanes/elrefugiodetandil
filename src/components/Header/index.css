@@ -6,6 +6,8 @@ header {
     top: 0;
     padding: 10px 20px;
     z-index: 999;
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
 }
 
 .navbar {

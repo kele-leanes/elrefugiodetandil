@@ -20,6 +20,22 @@ class Contact extends Component {
         this.handleModal = this.handleModal.bind(this)
     }
 
+    validateEmail(email){
+        // eslint-disable-next-line
+        const pattern = /[a-zA-Z0-9]+[\.]?([a-zA-Z0-9]+)?[\@][a-z]{3,9}[\.][a-z]{2,5}/g;
+        const result = pattern.test(email);
+        if(result===true){
+          this.setState({
+            emailError:false,
+            email:email
+          })
+        } else{
+          this.setState({
+            emailError:true
+          })
+        }
+      }
+
 
     handleChange(evt) {
         const value = evt.target.value;
@@ -101,6 +117,7 @@ class Contact extends Component {
                         onChange={this.handleChange}
                         />
                     </label>
+                    {this.state.emailError ? <span style={{color: "red"}}>ingrese un e-mail válido por favor.</span> : ''}
                     <label>
                     telefono
                         <input

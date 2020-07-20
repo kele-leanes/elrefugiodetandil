@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import emailjs from 'emailjs-com'
 import ModalAlert from './../ModalAlert'
 import './index.css'
+import { CSSTransition } from 'react-transition-group'
 
 class Contact extends Component {
     constructor(props){
@@ -70,7 +71,17 @@ class Contact extends Component {
     render(){
         return(
             <div className='main-container'>
-                {this.state.response ? <ModalAlert textMsg={this.state.textMsg} handler={this.handleModal}/> : null}
+                <CSSTransition
+                    in={this.state.response}
+                    timeout={350}
+                    classNames="modal-display"
+                    unmountOnExit
+                >
+                    <ModalAlert 
+                        textMsg={this.state.textMsg} 
+                        handler={this.handleModal}
+                    />
+                </CSSTransition>
                 <div className='form'>
                     <label>
                     Nombre

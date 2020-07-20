@@ -11,7 +11,7 @@ class ModalAlert extends Component {
         this.scrollToMyRef();
     }
 
-    scrollToMyRef = () => window.scrollTo(0, this.myRef.current.offsetTop)
+    scrollToMyRef = () => window.scrollTo(0, this.myRef.current.offsetTop-100)
     
     render(){
         return (

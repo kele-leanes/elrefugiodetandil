@@ -19,3 +19,21 @@
     text-align: center;
     padding: 20px 15px;
 }
+
+.modal-display-enter {
+    opacity: 0;
+}
+
+.modal-display-enter-active {
+    opacity: 1;
+    transition: opacity 300ms, transform 300ms;
+}
+
+.modal-display-exit {
+    opacity: 1;
+}
+
+.modal-display-exit-active {
+    opacity: 0;
+    transition: opacity 300ms, transform 300ms;
+}

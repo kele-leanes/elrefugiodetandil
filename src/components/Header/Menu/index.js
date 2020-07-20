@@ -22,7 +22,7 @@ class Menu extends Component {
       }
 
       handleClickOutside(event) {
-        if (this.wrapperRef && !this.wrapperRef.contains(event.target)) {
+        if (this.wrapperRef && !this.wrapperRef.contains(event.target) && !this.wrapperRef.parentNode.contains(event.target) ) {
             this.props.clicked()
           }
       }
@@ -36,6 +36,9 @@ class Menu extends Component {
                     </li>
                     <li className='items'>
                         <Link to='/' onClick={this.props.clicked} >Quienes somos</Link>
+                    </li>
+                    <li className='items'>
+                        <Link to='/' onClick={this.props.clicked} >Nuestra carta</Link>
                     </li>
                     <li className='items'>
                         <Link to='/contacto' onClick={this.props.clicked}>Contacto</Link>

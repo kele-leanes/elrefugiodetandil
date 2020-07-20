@@ -15,7 +15,7 @@ ul {
     width: 100%;
     top: 80px;
     left: 0;
-    height: 140px;
+    height: 160px;
     backdrop-filter: blur(4px);
     -webkit-backdrop-filter: blur(4px);
 }

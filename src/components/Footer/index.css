@@ -11,6 +11,7 @@ footer {
 .map-wrapper {
     margin: 20px 0;
     width: 60%;
+    text-align: center;
 }
 
 .map-frame {
@@ -27,6 +28,7 @@ footer {
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
+    padding: 0 10px;
 }
 
 .author a {

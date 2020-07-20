@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import Menu from './Menu'
 import './index.css'
+import { CSSTransition } from 'react-transition-group';
 
 class Header extends Component {
     constructor() {
@@ -25,7 +26,16 @@ class Header extends Component {
                     <div className='menu-icon' onClick={this.handleClick}>
                         {this.state.isOpen ? <i className="fas fa-times"></i> : <i className="fas fa-bars"></i>}
                     </div>
-                        {this.state.isOpen ? <Menu clicked={this.handleClick}/> : null}
+                        <CSSTransition
+                            in={this.state.isOpen}
+                            timeout={350}
+                            classNames="display"
+                            unmountOnExit
+                        >
+                            <Menu 
+                                clicked={this.handleClick}
+                            />
+                        </CSSTransition>
                 </div>
             </header>
         )

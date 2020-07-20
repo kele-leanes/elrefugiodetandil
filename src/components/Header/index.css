@@ -20,6 +20,7 @@ header {
 .menu-icon {
     width: 30px;
     height: 30px;
+    text-align: center;
 }
 
 i.fas {
@@ -32,4 +33,19 @@ h1 {
     color: white;
     margin: 0;
     font-size: 40px;
+}
+
+.display-enter {
+    opacity: 0;
+}
+.display-enter-active {
+    opacity: 1;
+    transition: opacity 300ms, transform 300ms;
+}
+.display-exit {
+    opacity: 1;
+}
+.display-exit-active {
+    opacity: 0;
+    transition: opacity 300ms, transform 300ms;
 }

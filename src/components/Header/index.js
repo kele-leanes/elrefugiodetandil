@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import Menu from './Menu'
 import './index.css'
 import { CSSTransition } from 'react-transition-group';
+import { Link } from 'react-router-dom';
 
 class Header extends Component {
     constructor() {
@@ -21,7 +22,9 @@ class Header extends Component {
             <header>
                 <div className='navbar'>
                     <div>
-                        <h1>EL REFUGIO</h1>
+                        <Link to='/' onClick={this.handleClick}>
+                            <h1>EL REFUGIO</h1>
+                        </Link>
                     </div>
                     <div className='menu-icon' onClick={this.handleClick}>
                         {this.state.isOpen ? <i className="fas fa-times"></i> : <i className="fas fa-bars"></i>}

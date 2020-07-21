@@ -4,6 +4,7 @@ import './index.css';
 import { CSSTransition } from 'react-transition-group';
 import { Link } from 'react-router-dom';
 import HamburgerMenu from 'react-hamburger-menu';
+import logoHeader from './../../images/logo-web.png'
 
 class Header extends Component {
     constructor() {
@@ -22,9 +23,9 @@ class Header extends Component {
         return (
             <header>
                 <div className='navbar'>
-                    <div>
+                    <div className='logo-img'>
                         <Link to='/' onClick={() => this.setState({isOpen: false})}>
-                            <h1>EL REFUGIO</h1>
+                            <img src={logoHeader} alt='logo'></img>
                         </Link>
                     </div>
                     <HamburgerMenu

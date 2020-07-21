@@ -15,13 +15,15 @@ header {
     justify-content: space-between;
     align-items: center;
     height: 100%;
+    padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
 }
 
-h1 {
-    font-family: 'Bebas Neue', cursive;
-    color: white;
-    margin: 0;
-    font-size: 40px;
+.logo-img {
+   height: 40px;
+}
+
+.logo-img img {
+    height: 40px;
 }
 
 .display-enter {

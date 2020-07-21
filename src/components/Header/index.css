@@ -15,8 +15,6 @@ header {
     justify-content: space-between;
     align-items: center;
     height: 100%;
-    margin: auto 0;
-    padding: env(safe-area-inset-right) env(safe-area-inset-left);
 }
 
 .logo-img {

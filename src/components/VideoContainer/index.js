@@ -10,8 +10,9 @@ function VideoContainer() {
     const isPortrait = useMediaQuery({ orientation: 'portrait' })
         return (
             <div className='video-container'>
-                {isPortrait ? <video className='video-wrapper' src={ video_vertical }  autoPlay loop muted disablePictureInPicture playsInline ></video> : <video className='video-wrapper' src={ video }  autoPlay loop muted disablePictureInPicture playsInline ></video>}
-                      
+                {isPortrait ? 
+                <video className='video-wrapper' src={ video_vertical }  autoPlay loop muted disablePictureInPicture playsInline ></video> : 
+                <video className='video-wrapper' src={ video }  autoPlay loop muted disablePictureInPicture playsInline ></video>}         
             </div>
         );
 }

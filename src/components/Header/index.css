@@ -17,17 +17,6 @@ header {
     height: 100%;
 }
 
-.menu-icon {
-    width: 30px;
-    height: 30px;
-    text-align: center;
-}
-
-i.fas {
-    font-size: 25px;
-    color: white;
-}
-
 h1 {
     font-family: 'Bebas Neue', cursive;
     color: white;

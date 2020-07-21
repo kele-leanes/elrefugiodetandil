@@ -1,8 +1,9 @@
-import React, { Component } from 'react'
-import Menu from './Menu'
-import './index.css'
+import React, { Component } from 'react';
+import Menu from './Menu';
+import './index.css';
 import { CSSTransition } from 'react-transition-group';
 import { Link } from 'react-router-dom';
+import HamburgerMenu from 'react-hamburger-menu';
 
 class Header extends Component {
     constructor() {
@@ -26,19 +27,27 @@ class Header extends Component {
                             <h1>EL REFUGIO</h1>
                         </Link>
                     </div>
-                    <div className='menu-icon' onClick={this.handleClick}>
-                        {this.state.isOpen ? <i className="fas fa-times"></i> : <i className="fas fa-bars"></i>}
-                    </div>
-                        <CSSTransition
-                            in={this.state.isOpen}
-                            timeout={350}
-                            classNames="display"
-                            unmountOnExit
-                        >
-                            <Menu 
-                                clicked={this.handleClick}
-                            />
-                        </CSSTransition>
+                    <HamburgerMenu
+                        isOpen={this.state.isOpen}
+                        menuClicked={this.handleClick}
+                        width={20}
+                        height={18}
+                        strokeWidth={2}
+                        rotate={0}
+                        color='white'
+                        borderRadius={0}
+                        animationDuration={0.5}
+                    />
+                    <CSSTransition
+                        in={this.state.isOpen}
+                        timeout={350}
+                        classNames="display"
+                        unmountOnExit
+                    >
+                        <Menu 
+                            clicked={this.handleClick}
+                        />
+                    </CSSTransition>
                 </div>
             </header>
         )

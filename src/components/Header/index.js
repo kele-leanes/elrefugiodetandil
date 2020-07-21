@@ -22,7 +22,7 @@ class Header extends Component {
             <header>
                 <div className='navbar'>
                     <div>
-                        <Link to='/' onClick={this.handleClick}>
+                        <Link to='/' onClick={() => this.setState({isOpen: false})}>
                             <h1>EL REFUGIO</h1>
                         </Link>
                     </div>

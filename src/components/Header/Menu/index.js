@@ -11,6 +11,7 @@ class Menu extends Component {
 
     componentDidMount() {
         document.addEventListener('mousedown', this.handleClickOutside);
+        console.log(window.screen.width)
       }
     
       componentWillUnmount() {
@@ -22,7 +23,7 @@ class Menu extends Component {
       }
 
       handleClickOutside(event) {
-        if (this.wrapperRef && !this.wrapperRef.contains(event.target) && !this.wrapperRef.parentNode.contains(event.target) ) {
+        if (this.wrapperRef && !this.wrapperRef.contains(event.target) && !this.wrapperRef.parentNode.contains(event.target) && window.innerWidth < 900 ) {
             this.props.clicked()
           }
       }

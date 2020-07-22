@@ -39,3 +39,9 @@ header {
     opacity: 0;
     transition: opacity 300ms, transform 300ms;
 }
+
+@media screen and (min-width: 900px) {
+    header {
+        padding: 10px 30px;
+    }
+}

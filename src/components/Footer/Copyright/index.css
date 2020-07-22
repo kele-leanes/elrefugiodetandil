@@ -1,0 +1,23 @@
+.footer-bottom {
+    background-color: black;
+    width: 100%;
+    text-align: center;
+    height: 70px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 10px;
+}
+
+.footer-bottom p {
+    margin: 0;
+}
+
+.author a {
+    text-decoration: none;
+    color: grey;
+}
+
+.author {
+    font-size: 14px;
+}

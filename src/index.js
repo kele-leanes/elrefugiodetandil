@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom'
+import './fonts/Ciutadella_Rounded.ttf'
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';

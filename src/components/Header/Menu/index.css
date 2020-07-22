@@ -1,7 +1,6 @@
 ul {
     list-style: none;
     margin: 0;
-    padding: 0;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -28,5 +27,44 @@ ul {
 a, a:visited, a:link  {
     text-decoration: none;
     color: white;
+}
+
+a:hover {
+    color: #ccc;
+}
+
+a:active {
+    color: black;
+    text-decoration: line-through;
+}
+
+@media screen and (min-width: 900px) {
+    
+    ul {
+        list-style: none;
+        margin: 0;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        height: 100%;
+        padding: 0;
+    }
+    
+    .menu-wrapper {
+        position: relative; 
+        background-color: transparent;
+        width: 40%;
+        top: 30px;
+        right: 0;
+        left: unset;
+        height: 80px;
+        backdrop-filter: none;
+        -webkit-backdrop-filter: none;
+    }
+
+    .items {
+        font-size: 18px;
+    }
+
 }
 

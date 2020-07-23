@@ -1,15 +1,17 @@
 import React from 'react'
 import './index.css'
 import Copyright from './Copyright'
+import BrandConteiner from '../BrandConteiner'
 
 function Footer() {
     return (
         <footer>
+            <BrandConteiner />
             <div className='footer-wrapper'>
                 <div className='contact-info'>
                     <p>El refugio | bar serrano</p>
                     <a href='https://g.page/elrefugiodetandil' target='_blank' rel="noopener noreferrer">valle del picapedrero</a>
-                    <p>tandil. argentina</p>
+                    <p>tandil, argentina</p>
                     <a href='mailto:elrefugiodetandil@gmail.com' target='_blank' rel="noopener noreferrer">elrefugiodetandil@gmail.com</a>
                 </div>
                 <div className='social'>

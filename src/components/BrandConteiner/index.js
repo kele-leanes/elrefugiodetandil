@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import imperial from './../../images/imperial.png';
-import romeriana from './../../images/romeriana.png';
-import levite from './../../images/levite.png';
+import coca from './../../images/coca-cola.png';
 import branca from './../../images/branca.png';
 import chandon from './../../images/chandon.png';
 import beefeater from './../../images/beefeater.png';
+import jameson from './../../images/jameson.png';
 import ImageGallery from 'react-image-gallery';
 import './index.css'
 
@@ -12,11 +12,11 @@ class BrandConteiner extends Component {
     render(){
         const images = [
             { original: imperial },
-            { original: romeriana },
-            { original: levite },
             { original: branca },
             { original: chandon },
-            { original: beefeater }
+            { original: jameson },
+            { original: beefeater },
+            { original: coca }
         ]
         return (
             <section>

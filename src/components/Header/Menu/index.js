@@ -36,7 +36,7 @@ class Menu extends Component {
                         <Link to='/' onClick={this.props.clicked} >Inicio</Link>
                     </li>
                     <li className='items'>
-                        <Link to='/' onClick={this.props.clicked} >Quienes somos</Link>
+                        <Link to='/nosotros' onClick={this.props.clicked} >Quienes somos</Link>
                     </li>
                     <li className='items'>
                         <Link to='/' onClick={this.props.clicked} >Nuestra carta</Link>

@@ -1,9 +1,12 @@
 @import "~react-image-gallery/styles/css/image-gallery.css";
 
-.image-gallery {
-    margin: 20px auto 0;
+footer section {
+    height: 50vh;
 }
 
 .brand-title {
     margin: 20px 20px;
+    font-family: Ciutadella, sans-serif;
+    font-weight: normal;
+    text-transform: uppercase;
 }

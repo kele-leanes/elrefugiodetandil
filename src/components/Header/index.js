@@ -18,25 +18,6 @@ class Header extends Component {
             scrollPos: 0
         }
         this.handleClick = this.handleClick.bind(this);
-        this.handleScroll = this.handleScroll.bind(this);
-    }
-
-    componentDidMount() {
-        window.addEventListener("scroll", this.handleScroll);
-    }
-      
-      componentWillUnmount() {
-        window.removeEventListener("scroll", this.handleScroll);
-    }
-    
-    handleScroll() {
-        const { scrollPos } = this.state;
-        const currentScrollPos = window.pageYOffset;
-        const showHeader = scrollPos > currentScrollPos;
-        this.setState({
-          scrollPos: currentScrollPos,
-          showHeader
-        });
     }
 
     handleClick() {
@@ -45,51 +26,49 @@ class Header extends Component {
     
     render(){
         return (
-            <Transition>
-                <StyledHeader className={this.state.showHeader ? "active" : "hidden"}>
-                    <Media queries={{ small: { maxWidth: 899 } }}>
-                        {matches => matches.small ? 
-                            <div className='navbar'>
-                                <div className='logo-img'>
-                                    <Link to='/' onClick={() => this.setState({isOpen: false})}>
-                                        <img src={logoHeader} alt='logo'></img>
-                                    </Link>
-                                </div>
-                                <HamburgerMenu
-                                    isOpen={this.state.isOpen}
-                                    menuClicked={this.handleClick}
-                                    width={20}
-                                    height={18}
-                                    strokeWidth={2}
-                                    rotate={0}
-                                    color='white'
-                                    borderRadius={0}
-                                    animationDuration={0.5}
+            <StyledHeader className={this.state.showHeader ? "active" : "hidden"}>
+                <Media queries={{ small: { maxWidth: 899 } }}>
+                    {matches => matches.small ? 
+                        <div className='navbar'>
+                            <div className='logo-img'>
+                                <Link to='/' onClick={() => this.setState({isOpen: false})}>
+                                    <img src={logoHeader} alt='logo'></img>
+                                </Link>
+                            </div>
+                            <HamburgerMenu
+                                isOpen={this.state.isOpen}
+                                menuClicked={this.handleClick}
+                                width={20}
+                                height={18}
+                                strokeWidth={2}
+                                rotate={0}
+                                color='white'
+                                borderRadius={0}
+                                animationDuration={0.5}
+                            />
+                            <CSSTransition
+                                in={this.state.isOpen}
+                                timeout={350}
+                                classNames="display"
+                                unmountOnExit
+                            >
+                                <Menu 
+                                    clicked={this.handleClick}
                                 />
-                                <CSSTransition
-                                    in={this.state.isOpen}
-                                    timeout={350}
-                                    classNames="display"
-                                    unmountOnExit
-                                >
-                                    <Menu 
-                                        clicked={this.handleClick}
-                                    />
-                                </CSSTransition>
+                            </CSSTransition>
+                        </div>
+                        : 
+                        <div className='navbar'>
+                            <div className='logo-img'>
+                                <Link to='/' onClick={() => this.setState({isOpen: false})}>
+                                    <img src={logoHeader} alt='logo'></img>
+                                </Link>
                             </div>
-                            : 
-                            <div className='navbar'>
-                                <div className='logo-img'>
-                                    <Link to='/' onClick={() => this.setState({isOpen: false})}>
-                                        <img src={logoHeader} alt='logo'></img>
-                                    </Link>
-                                </div>
-                                <Menu />
-                            </div>
-                            } 
-                    </Media>
-                </StyledHeader>
-            </Transition>
+                            <Menu />
+                        </div>
+                        } 
+                </Media>
+            </StyledHeader>   
         )
     }
 };
@@ -109,15 +88,4 @@ const StyledHeader = styled.header`
     }    
 `
 
-const Transition = styled.header`
-  .active {
-    visibility: visible;
-    transition: all 200ms ease-in;
-  }
-  .hidden {
-    visibility: hidden;
-    transition: all 200ms ease-out;
-    transform: translate(0, -100%);
-  }
-`
 export default Header;

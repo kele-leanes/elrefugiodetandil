@@ -19,7 +19,6 @@ footer {
 }
 
 .footer-wrapper {
-    margin: 20px 0;
     width: 80%;
     text-align: center;
     height: 300px;
@@ -36,12 +35,12 @@ footer {
 
 .social {
     display: flex;
-    justify-content: space-around;
-    padding: 0 10px;
-    width: 70%;
+    justify-content: flex-end;
+    width: 100%;
 }
 
 .social .fab {
-    font-size: 30px;
-    color: #ccc
+    font-size: 20px;
+    color: #ccc;
+    margin-left: 30px;
 }

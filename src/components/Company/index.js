@@ -47,6 +47,7 @@ const StyledArticle = styled.article`
     h2, p {
         font-family: ciutadella, 'cursiva';
         font-weight: normal;
+        text-align: justify;
     }
 `
 

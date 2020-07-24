@@ -33,7 +33,7 @@ class Header extends Component {
         const { scrollPos } = this.state;
         this.setState({
           scrollPos: document.body.getBoundingClientRect().top,
-          showHeader: document.body.getBoundingClientRect().top > scrollPos
+          showHeader: document.body.getBoundingClientRect().top >= scrollPos
         });
     }
 

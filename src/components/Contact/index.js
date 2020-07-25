@@ -13,7 +13,8 @@ class Contact extends Component {
             phone: '',
             message: '',
             response: null,
-            textMsg: ''
+            textMsg: '',
+            isDisabled: true
         }
         this.handleChange = this.handleChange.bind(this)
         this.sendForm = this.sendForm.bind(this)
@@ -43,6 +44,52 @@ class Contact extends Component {
           ...this.state,
           [evt.target.name]: value
         });
+        if(evt.target.name==='name'){
+            if(evt.target.value==='' || evt.target.value===null ){
+              this.setState({
+                nameError:true
+              })
+            } else {
+              this.setState({
+                nameError:false,     
+                name:evt.target.value
+              })
+            }
+          }
+          if(evt.target.name==='phone'){
+            if(evt.target.value==='' || evt.target.value===null ){
+              this.setState({
+                phoneError:true
+              })
+            } else {
+              this.setState({
+                phoneError:false,     
+                phone:evt.target.value
+              })
+            }
+          }
+          if(evt.target.name==='email'){
+           this.validateEmail(evt.target.value);
+          }
+          if(evt.target.name==='message'){
+            if(evt.target.value==='' || evt.target.value===null ){
+              this.setState({
+                messageError:true
+              })
+            } else {
+              this.setState({
+                messageError:false,     
+                message:evt.target.value
+              })
+            }
+          }
+          
+         if(this.state.nameError===false && this.state.phoneError===false &&
+          this.state.emailError===false && this.state.messageError===false){
+            this.setState({
+              isDisabled:false
+            })
+         }
     }
 
     handleModal() {
@@ -107,6 +154,7 @@ class Contact extends Component {
                         value={this.state.name}
                         onChange={this.handleChange}
                         />
+                    {this.state.nameError ? <span style={{color: "red"}}>Ingrese un nombre.</span> : ''}
                     </label>
                     <label>
                     E-mail
@@ -116,8 +164,8 @@ class Contact extends Component {
                         value={this.state.email}
                         onChange={this.handleChange}
                         />
+                    {this.state.emailError ? <span style={{color: "red"}}>ingrese un e-mail válido.</span> : ''}
                     </label>
-                    {this.state.emailError ? <span style={{color: "red"}}>ingrese un e-mail válido por favor.</span> : ''}
                     <label>
                     telefono
                         <input
@@ -126,6 +174,7 @@ class Contact extends Component {
                         value={this.state.phone}
                         onChange={this.handleChange}
                         />
+                    {this.state.phoneError ? <span style={{color: "red"}}>ingrese un numero telefonico.</span> : ''}
                     </label>
                     <label>
                     mensaje
@@ -134,8 +183,9 @@ class Contact extends Component {
                         value={this.state.message}
                         onChange={this.handleChange}
                         ></textarea>
+                        {this.state.messageError ? <span style={{color: "red"}}>escriba un mensaje.</span> : ''}
                     </label>
-                    <button className='btn-primary' onClick={this.sendForm}>Enviar</button>
+                    <button className='btn-primary' disabled={this.state.isDisabled} onClick={this.sendForm}>Enviar</button>
                 </div>
             </div>
         )

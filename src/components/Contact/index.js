@@ -7,6 +7,7 @@ import { CSSTransition } from 'react-transition-group'
 class Contact extends Component {
     constructor(props){
         super(props)
+        this.myRef = React.createRef()
         this.state = {
             name: '',
             email: '',
@@ -19,7 +20,16 @@ class Contact extends Component {
         this.handleChange = this.handleChange.bind(this)
         this.sendForm = this.sendForm.bind(this)
         this.handleModal = this.handleModal.bind(this)
+        this.scrollToMyRef = this.scrollToMyRef.bind(this)
     }
+
+    componentDidMount() {
+      this.scrollToMyRef();
+  }
+
+  scrollToMyRef() {
+    window.scrollTo(0, this.myRef.current.offsetTop)
+  } 
 
     validateEmail(email){
         // eslint-disable-next-line
@@ -89,6 +99,10 @@ class Contact extends Component {
             this.setState({
               isDisabled:false
             })
+         }else {
+            this.setState({
+                isDisabled:true
+              })
          }
     }
 
@@ -133,7 +147,7 @@ class Contact extends Component {
 
     render(){
         return(
-            <div className='main-container'>
+            <div className='main-container' ref={this.myRef}>
                 <CSSTransition
                     in={this.state.response}
                     timeout={350}
@@ -154,7 +168,7 @@ class Contact extends Component {
                         value={this.state.name}
                         onChange={this.handleChange}
                         />
-                    {this.state.nameError ? <span style={{color: "red"}}>Ingrese un nombre.</span> : ''}
+                    {this.state.nameError ? <span style={{color: "red"}}>Ingrese un nombre</span> : ''}
                     </label>
                     <label>
                     E-mail
@@ -164,7 +178,7 @@ class Contact extends Component {
                         value={this.state.email}
                         onChange={this.handleChange}
                         />
-                    {this.state.emailError ? <span style={{color: "red"}}>ingrese un e-mail válido.</span> : ''}
+                    {this.state.emailError ? <span style={{color: "red"}}>ingrese un e-mail válido</span> : ''}
                     </label>
                     <label>
                     telefono
@@ -174,7 +188,7 @@ class Contact extends Component {
                         value={this.state.phone}
                         onChange={this.handleChange}
                         />
-                    {this.state.phoneError ? <span style={{color: "red"}}>ingrese un numero telefonico.</span> : ''}
+                    {this.state.phoneError ? <span style={{color: "red"}}>ingrese un numero telefónico</span> : ''}
                     </label>
                     <label>
                     mensaje
@@ -183,7 +197,7 @@ class Contact extends Component {
                         value={this.state.message}
                         onChange={this.handleChange}
                         ></textarea>
-                        {this.state.messageError ? <span style={{color: "red"}}>escriba un mensaje.</span> : ''}
+                        {this.state.messageError ? <span style={{color: "red"}}>Escriba un mensaje</span> : ''}
                     </label>
                     <button className='btn-primary' disabled={this.state.isDisabled} onClick={this.sendForm}>Enviar</button>
                 </div>

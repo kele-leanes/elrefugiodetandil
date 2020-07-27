@@ -1,8 +1,11 @@
 .main-container {
-    background-color: #2f2f2f;
-    height: 100vh;
-    padding-top: 100px;
+    background-color: #333;
+    height: 100%;
+    padding: 100px 0 40px;
     position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     
 }
 
@@ -56,4 +59,8 @@
     background-color: #ccc;
     border-radius: 15px;
     border: none;
+}
+
+.btn-primary:disabled, .btn-primary[disabled] {
+    color: gray;
 }

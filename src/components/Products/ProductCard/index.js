@@ -1,43 +1,61 @@
-import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import Card from '@material-ui/core/Card';
-import CardActionArea from '@material-ui/core/CardActionArea';
-import CardContent from '@material-ui/core/CardContent';
-import CardMedia from '@material-ui/core/CardMedia';
-import Typography from '@material-ui/core/Typography';
+import React, { Component } from 'react';
+import styled from 'styled-components';
+import Skeleton from '@material-ui/lab/Skeleton';
 
-const useStyles = makeStyles({
-  root: {
-    maxWidth: 345,
-    backgroundColor: '#424242',
-    color: 'white',
-    marginBottom: 15
-  },
-  media: {
-    height: 400,
-  },
-});
+class Card extends Component {
+  constructor(props){
+    super(props)
+    this.state = {
+      loading: true
+    }
+    setTimeout(() => {
+      this.setState({ loading: false })
+    }, 2000)
+  }
+  render(){
+    const { image, title, description } = this.props
 
-export default function MediaCard(props) {
-  const classes = useStyles();
-
-  return (
-    <Card className={classes.root}>
-      <CardActionArea>
-        <CardMedia
-          className={classes.media}
-          image={props.image}
-          title={props.title}
-        />
-        <CardContent>
-          <Typography gutterBottom variant="h5" component="h2">
-            {props.title}
-          </Typography>
-          <Typography color="inherit" component="p">
-            {props.description}
-          </Typography>
-        </CardContent>
-      </CardActionArea>
-    </Card>
-  );
+    return (
+      <StyledCard>
+        <div>
+          { this.state.loading ? <Skeleton variant="rect"  height={400} /> : <StyledImg
+            src={image}
+            alt={title}
+          /> }
+          <StyledDiv>
+            <StyledH2>
+              {title}
+            </StyledH2>
+            <p>
+              {description}
+            </p>
+          </StyledDiv>
+        </div>
+      </StyledCard>
+    );
+  }
 }
+
+const StyledCard = styled.div`
+  color: white;
+  max-width: 345px;
+  margin-bottom: 15px;
+  background-color: #424242;
+  box-shadow: 0px 2px 1px -1px rgba(0,0,0,0.2), 0px 1px 1px 0px rgba(0,0,0,0.14), 0px 1px 3px 0px rgba(0,0,0,0.12);
+  border-radius: 4px;
+  font-family: ciutadella, 'cursive';
+`
+const StyledImg = styled.img`
+  height: 400px;
+  width: 100%;
+`
+
+const StyledDiv = styled.div`
+  padding: 12px;
+`
+
+const StyledH2 = styled.h2`
+  margin: 0;
+  text-transform: uppercase;
+`
+export default Card;

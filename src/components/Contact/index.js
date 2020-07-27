@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import emailjs from 'emailjs-com'
 import ModalAlert from './../ModalAlert'
 import './index.css'
-import { CSSTransition } from 'react-transition-group'
+import { CSSTransition } from 'react-transition-group';
 
 class Contact extends Component {
     constructor(props){
@@ -192,11 +192,11 @@ class Contact extends Component {
                     </label>
                     <label>
                     mensaje
-                        <textarea
+                        <input
                         name="message"
                         value={this.state.message}
                         onChange={this.handleChange}
-                        ></textarea>
+                        />
                         {this.state.messageError ? <span style={{color: "red"}}>Escriba un mensaje</span> : ''}
                     </label>
                     <button className='btn-primary' disabled={this.state.isDisabled} onClick={this.sendForm}>Enviar</button>

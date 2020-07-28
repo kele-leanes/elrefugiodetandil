@@ -169,7 +169,7 @@ class Contact extends Component {
                         autoComplete = 'off'
                         onChange={this.handleChange}
                         />
-                    {this.state.nameError ? <span style={{color: "red"}}>Ingrese un nombre</span> : ''}
+                    {this.state.nameError ? <span className='error-input'>Ingrese un nombre</span> : ''}
                     </label>
                     <label>
                     E-mail
@@ -180,7 +180,7 @@ class Contact extends Component {
                         autoComplete = 'off'
                         onChange={this.handleChange}
                         />
-                    {this.state.emailError ? <span style={{color: "red"}}>ingrese un e-mail válido</span> : ''}
+                    {this.state.emailError ? <span className='error-input'>ingrese un e-mail válido</span> : ''}
                     </label>
                     <label>
                     telefono
@@ -191,16 +191,16 @@ class Contact extends Component {
                         autoComplete = 'off'
                         onChange={this.handleChange}
                         />
-                    {this.state.phoneError ? <span style={{color: "red"}}>ingrese un numero telefónico</span> : ''}
+                    {this.state.phoneError ? <span className='error-input'>ingrese un numero telefónico</span> : ''}
                     </label>
                     <label>
                     mensaje
-                        <input
+                        <textarea
                         name="message"
                         value={this.state.message}
                         onChange={this.handleChange}
                         />
-                        {this.state.messageError ? <span style={{color: "red"}}>Escriba un mensaje</span> : ''}
+                        {this.state.messageError ? <span className='error-input'>Escriba un mensaje</span> : ''}
                     </label>
                     <button className='btn-primary' disabled={this.state.isDisabled} onClick={this.sendForm}>Enviar</button>
                 </div>

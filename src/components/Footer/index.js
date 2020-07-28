@@ -18,7 +18,7 @@ function Footer() {
                 </div>
                 <div className='contact-info'>
                     <Link to='/nosotros' >Quienes somos</Link>
-                    <Link to='/' >Nuestra carta</Link>
+                    <Link to='/productos' >Nuestra carta</Link>
                     <Link to='/contacto' >Contacto</Link>
                 </div>
                 <Social />

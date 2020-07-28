@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import vacio from './../../images/vacio.jpg';
 import papas from './../../images/papas.jpg';
 import vegetales from './../../images/vegetales.jpg';
@@ -40,12 +40,32 @@ const products = [
     }
 ]
 
-function Products() {
-    return(
-        <article className='main-container'>
-            {products.map(product => <MediaCard title={product.title} image={product.image} description={product.description}/> )}
-        </article>
-    )
+class Products extends Component {
+    constructor(){
+        super()
+        this.myRef = React.createRef()
+        this.scrollToMyRef = this.scrollToMyRef.bind(this)
+    }
+
+    componentDidMount() {
+        this.scrollToMyRef();
+    }
+  
+    scrollToMyRef() {
+      window.scrollTo(0, this.myRef.current.offsetTop)
+    } 
+    render(){
+        return(
+            <article className='main-container' ref={this.myRef}>
+                {products.map((product,index) => <MediaCard 
+                key={index}
+                title={product.title} 
+                image={product.image} 
+                description={product.description}/> )}
+            </article>
+        )
+
+    }
 }
 
 export default Products;

@@ -13,10 +13,10 @@ class Card extends Component {
     }, 2000)
   }
   render(){
-    const { image, title, description } = this.props
+    const { key, image, title, description } = this.props
 
     return (
-      <StyledCard>
+      <StyledCard key={key}>
         <div>
           { this.state.loading ? <Skeleton variant="rect"  height={400} /> : <StyledImg
             src={image}

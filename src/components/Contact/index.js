@@ -166,6 +166,7 @@ class Contact extends Component {
                         type="text"
                         name="name"
                         value={this.state.name}
+                        autoComplete = 'off'
                         onChange={this.handleChange}
                         />
                     {this.state.nameError ? <span style={{color: "red"}}>Ingrese un nombre</span> : ''}
@@ -176,6 +177,7 @@ class Contact extends Component {
                         type="email"
                         name="email"
                         value={this.state.email}
+                        autoComplete = 'off'
                         onChange={this.handleChange}
                         />
                     {this.state.emailError ? <span style={{color: "red"}}>ingrese un e-mail válido</span> : ''}
@@ -186,6 +188,7 @@ class Contact extends Component {
                         type="tel"
                         name="phone"
                         value={this.state.phone}
+                        autoComplete = 'off'
                         onChange={this.handleChange}
                         />
                     {this.state.phoneError ? <span style={{color: "red"}}>ingrese un numero telefónico</span> : ''}

@@ -8,20 +8,37 @@ class Card extends Component {
     this.state = {
       loading: true
     }
-    setTimeout(() => {
-      this.setState({ loading: false })
-    }, 2000)
+    this.handleClick = this.handleClick.bind(this)
   }
+
+  handleClick(){
+    if (navigator.share) {
+      navigator.share({
+        title: 'El Refugio - Bar Serrano',
+        text: this.props.title ,
+        url: this.props.image,
+      })
+        .then(() => console.log('Successful share'))
+        .catch((error) => console.log('Error sharing', error));
+    } else {
+      console.log(`Your system doesn't support sharing files.`);
+    }
+  }
+
   render(){
     const { key, image, title, description } = this.props
 
     return (
       <StyledCard key={key}>
-        <div>
-          { this.state.loading ? <Skeleton variant="rect"  height={400} /> : <StyledImg
+        <div style={{height: 400}}>
+          {this.state.loading && <Skeleton variant="rect"  height={400}/>}
+          <StyledImg
             src={image}
             alt={title}
-          /> }
+            onLoad={()=> this.setState({loading: false})}
+            show= {this.state.loading ? '0' : '1'}
+          />
+        </div>
           <StyledDiv>
             <StyledH2>
               {title}
@@ -29,8 +46,8 @@ class Card extends Component {
             <p>
               {description}
             </p>
+            <button onClick={this.handleClick}>Compartir</button>
           </StyledDiv>
-        </div>
       </StyledCard>
     );
   }
@@ -48,6 +65,8 @@ const StyledCard = styled.div`
 const StyledImg = styled.img`
   height: 400px;
   width: 100%;
+  transition: opacity 1s;
+  opacity: ${props => props.show};
 `
 
 const StyledDiv = styled.div`

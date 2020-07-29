@@ -5,14 +5,11 @@ import valle from './../../images/valle-del-picapedrero.jpg'
 import Skeleton from '@material-ui/lab/Skeleton';
 
 class Company extends Component {
-    constructor(){
-        super()
+    constructor(props){
+        super(props)
         this.state = {
             loading: true
         }
-        setTimeout(() => {
-            this.setState({ loading: false })
-        }, 2000)
         this.myRef = React.createRef();
         this.scrollToMyRef = this.scrollToMyRef.bind(this);
     }
@@ -29,10 +26,15 @@ class Company extends Component {
         return(
             <StyledArticle ref={this.myRef}>
                 <section>
-                        {this.state.loading ? <Skeleton variant="rect"  height={250} ></Skeleton> : 
                     <StyledFigure>
-                        <img src={rainbow} alt='El Refugio'></img>
-                    </StyledFigure>}
+                        {this.state.loading && <Skeleton variant="rect"  height={250} /> }
+                        <StyledImg 
+                            src ={rainbow} 
+                            alt ='El Refugio'
+                            onLoad ={()=> this.setState({loading: false})}
+                            show = {this.state.loading ? '0' : '1'}    
+                            />
+                    </StyledFigure>
                     <h2>EL REFUGIO</h2>
                     <p>Ubicado en el Valle del Picapedrero, a solo 1km del puente colgante de av. San Gabriel.
                         Desde el 21 de Diciembre de 2017 es una opción gastronómica en un ambiente natural, con los mejores paisajes de Tandil.
@@ -42,10 +44,14 @@ class Company extends Component {
                         Ideal para ir en família o con amigos, precios accesibles y la mejor atención.</p>
                 </section>
                 <section>
-                {this.state.loading ? <Skeleton variant="rect"  height={250} ></Skeleton> : 
                     <StyledFigure>
-                        <img src={valle} alt='Valle del Picapedrero'></img>
-                    </StyledFigure>}
+                        {this.state.loading && <Skeleton variant="rect"  height={250} /> }
+                        <StyledImg src={valle} 
+                            alt='Valle del Picapedrero'
+                            onLoad={()=> this.setState({loading: false})}
+                            show= {this.state.loading ? '0' : '1'}    
+                            />
+                    </StyledFigure>
                     <h2>VALLE DEL PICAPEDRERO</h2>
                     <p>Es un predio de 24 hectáreas enclavado sobre las laderas del cerro Aurora (foto). Todo ha quedado en el lugar que lo colocaron los picapedreros de principios de siglo XX.
                         Esos hombres españoles e italianos en su mayoría llegaron a las sierras, donde afloran las antiguas rocas graníticas, para obtener adoquines, cordones y otros cortes para la construcción.
@@ -61,13 +67,16 @@ class Company extends Component {
 
 const StyledFigure = styled.figure`
     margin: 0;
-    img {
+    height: 250px;
+`
+const StyledImg = styled.img`
     width: 100%;
     height: 250px;
     object-fit: cover;
-    }
-
+    transition: opacity 1s;
+    opacity: ${props => props.show};
 `
+
 const StyledArticle = styled.article`
     padding: 100px 20px 60px;
     background-color: #2f2f2f;

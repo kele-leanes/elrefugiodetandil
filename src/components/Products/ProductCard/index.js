@@ -8,21 +8,6 @@ class Card extends Component {
     this.state = {
       loading: true
     }
-    this.handleClick = this.handleClick.bind(this)
-  }
-
-  handleClick(){
-    if (navigator.share) {
-      navigator.share({
-        title: 'El Refugio - Bar Serrano',
-        text: this.props.title ,
-        url: this.props.image,
-      })
-        .then(() => console.log('Successful share'))
-        .catch((error) => console.log('Error sharing', error));
-    } else {
-      console.log(`Your system doesn't support sharing files.`);
-    }
   }
 
   render(){
@@ -46,7 +31,6 @@ class Card extends Component {
             <p>
               {description}
             </p>
-            <button onClick={this.handleClick}>Compartir</button>
           </StyledDiv>
       </StyledCard>
     );

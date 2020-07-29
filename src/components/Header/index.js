@@ -84,7 +84,7 @@ const StyledHeader = styled.header`
     backdrop-filter: blur(4px);
     -webkit-backdrop-filter: blur(4px);
     @media screen and (min-width: 900px) {
-        padding: 10px 30px;    
+        padding: 10px 40px;    
     }    
 `
 

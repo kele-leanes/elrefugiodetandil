@@ -13,10 +13,9 @@ function VideoContainer() {
         return (
             <div className='video-container'>
                 {!videoLoaded && <Spinner />}
-                {isPortrait ? 
                 <video className='video-wrapper' 
                     onLoadedData={()=>setVideoLoaded(true)} 
-                    src={ video_vertical }  
+                    src={ isPortrait ? video_vertical : video }  
                     autoPlay 
                     loop 
                     muted 
@@ -24,18 +23,7 @@ function VideoContainer() {
                     playsInline 
                     style={{ opacity: videoLoaded ? 1 : 0 }}
                     >
-                </video> : 
-                <video className='video-wrapper' 
-                    onLoadedData={()=>setVideoLoaded(true)} 
-                    src={ video }  
-                    autoPlay 
-                    loop 
-                    muted 
-                    disablePictureInPicture 
-                    playsInline 
-                    style={{ opacity: videoLoaded ? 1 : 0 }}
-                    >
-                </video>}         
+                </video>
             </div>
         );
 }

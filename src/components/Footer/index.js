@@ -12,14 +12,14 @@ function Footer() {
             <section className='footer-wrapper'>
                 <div className='contact-info'>
                     <p>El refugio | bar serrano</p>
-                    <a href='https://g.page/elrefugiodetandil' target='_blank' rel="noopener noreferrer">valle del picapedrero</a>
+                    <a href='https://g.page/elrefugiodetandil' target='_blank' rel="noopener noreferrer"><p>valle del picapedrero</p></a>
                     <p>tandil, argentina</p>
-                    <a href='mailto:elrefugiodetandil@gmail.com' className='email' target='_blank' rel="noopener noreferrer">elrefugiodetandil@gmail.com</a>
+                    <a href='mailto:elrefugiodetandil@gmail.com' className='email' target='_blank' rel="noopener noreferrer"><p>elrefugiodetandil@gmail.com</p></a>
                 </div>
                 <div className='contact-info'>
-                    <Link to='/nosotros' >Quienes somos</Link>
-                    <Link to='/productos' >Nuestra carta</Link>
-                    <Link to='/contacto' >Contacto</Link>
+                    <Link to='/nosotros' ><p>Quienes somos</p></Link>
+                    <Link to='/productos' ><p>Nuestra carta</p></Link>
+                    <Link to='/contacto' ><p>Contacto</p></Link>
                 </div>
                 <Social />
             </section>

@@ -11,7 +11,6 @@ class Menu extends Component {
 
     componentDidMount() {
         document.addEventListener('mousedown', this.handleClickOutside);
-        console.log(window.screen.width)
       }
     
       componentWillUnmount() {

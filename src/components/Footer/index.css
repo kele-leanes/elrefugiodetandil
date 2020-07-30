@@ -1,6 +1,7 @@
 footer {
     width: 100%;
     min-height: calc(100vh - 80px);
+    height: 100%;
     background-color: rgb(26,23,24);
     display: flex;
     flex-direction: column;

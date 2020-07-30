@@ -75,7 +75,7 @@ class Header extends Component {
 
 const StyledHeader = styled.header`
     position: fixed;
-    background-color: rgba(0, 0, 0, 0.4);
+    background-color: rgba(0, 0, 0, 0.9);
     width: 100%;
     height: 80px;
     top: 0;

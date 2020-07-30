@@ -55,7 +55,7 @@ const StyledDiv = styled.div`
 
 const StyledImg = styled.img`
     width: 140px;
-    height: auto;
+    height: 135px;
     object-fit: contain;
 `
 

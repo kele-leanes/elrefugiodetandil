@@ -26,7 +26,7 @@ class Header extends Component {
     
     render(){
         return (
-            <StyledHeader className={this.state.showHeader ? "active" : "hidden"}>
+            <StyledHeader >
                 <Media queries={{ small: { maxWidth: 899 } }}>
                     {matches => matches.small ? 
                         <div className='navbar'>

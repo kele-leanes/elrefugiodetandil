@@ -65,8 +65,8 @@ footer .email {
 
 @media screen and (min-width: 768px){
     footer {
-        max-height: calc(100vh - 80px);
         min-height: unset;
+        padding: 0 40px 70px;
     }
 
     .footer-wrapper {
@@ -98,12 +98,6 @@ footer .email {
 
 @media screen and (min-width: 1024px){
     
-    footer {
-        max-height: calc(100vh - 80px);
-        min-height: unset;
-        padding: 0 40px 70px;
-    }
-
     .footer-wrapper {
         max-width: 1200px;
     }

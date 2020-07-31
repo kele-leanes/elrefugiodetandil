@@ -20,7 +20,6 @@ footer {
     text-transform: uppercase;
     width: 300px;
     margin-bottom: 10px;
-    flex-grow: 1;
 }
 
 .footer-wrapper {
@@ -41,7 +40,6 @@ footer {
 .social {
     display: flex;
     justify-content: flex-start;
-    flex-grow: 2;
 }
 
 .social .fab {
@@ -67,17 +65,24 @@ footer .email {
 }
 
 @media screen and (min-width: 768px){
+    footer {
+        max-height: calc(100vh - 80px);
+        min-height: unset;
+    }
+
     .footer-wrapper {
         flex-direction: row;
         justify-content: space-between;
         padding: 0 20px;
         max-width: 800px;
         margin-top: 30px;
+        flex-grow: 1;
     }
 
     .social {
         flex-direction: column;
         font-family: ciutadella, cursive;
+        flex-grow: 2;
     }
 
     .social a {

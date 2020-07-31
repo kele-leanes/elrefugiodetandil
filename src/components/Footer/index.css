@@ -20,6 +20,7 @@ footer {
     text-transform: uppercase;
     width: 300px;
     margin-bottom: 10px;
+    flex-grow: 1;
 }
 
 .footer-wrapper {
@@ -40,6 +41,7 @@ footer {
 .social {
     display: flex;
     justify-content: flex-start;
+    flex-grow: 2;
 }
 
 .social .fab {

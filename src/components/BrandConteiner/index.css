@@ -1,7 +1,7 @@
 @import "~react-image-gallery/styles/css/image-gallery.css";
 
 footer section {
-    height: 40vh;
+    height: auto;
     width: 100%;
 }
 

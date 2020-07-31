@@ -3,7 +3,7 @@ import Media from 'react-media'
 
 function Social() {
     return(
-        <Media queries={{ small: { maxWidth: 899 } }}>
+        <Media queries={{ small: { maxWidth: 767 } }}>
                     {matches => matches.small ?
         <div className='social'>
             <a href='https://www.facebook.com/elrefugiodetandil/' target='_blank' rel="noopener noreferrer"><i className="fab fa-facebook"></i></a>

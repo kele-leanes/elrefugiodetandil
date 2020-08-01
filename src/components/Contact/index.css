@@ -63,7 +63,17 @@
     background-color: #ccc;
     border-radius: 25px;
     border: none;
-    margin: 10px
+    margin: 10px;
+    cursor: pointer;
+    transition: background-color 0.5s;
+}
+
+.btn-primary:hover {
+    background-color: #eee;
+}
+
+.btn-primary:active {
+    background-color: #fff;
 }
 
 .btn-primary:disabled, .btn-primary[disabled] {

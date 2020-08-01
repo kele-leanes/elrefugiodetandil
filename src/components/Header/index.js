@@ -14,8 +14,6 @@ class Header extends Component {
         super();
         this.state = {
             isOpen: false,
-            showHeader: true,
-            scrollPos: 0
         }
         this.handleClick = this.handleClick.bind(this);
     }

@@ -64,6 +64,11 @@ footer .email {
 }
 
 @media screen and (min-width: 768px){
+
+    .image-gallery-image {
+        height: 50vh;
+    }
+
     footer {
         min-height: unset;
         padding: 0 40px 70px;
@@ -75,13 +80,11 @@ footer .email {
         padding: 0 80px;
         max-width: 800px;
         margin-top: 30px;
-        flex-grow: 1;
     }
 
     .social {
         flex-direction: column;
         font-family: ciutadella, cursive;
-        flex-grow: 2;
     }
 
     .social a {

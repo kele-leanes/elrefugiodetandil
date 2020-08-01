@@ -13,12 +13,12 @@ import './index.css';
 class BrandConteiner extends Component {
     render(){
         const images = [
-            { original: imperial },
-            { original: branca },
-            { original: chandon },
-            { original: jameson },
-            { original: beefeater },
-            { original: coca }
+            { original: imperial , originalAlt: 'Imperial' },
+            { original: branca, originalAlt: 'Fernet Branca' },
+            { original: jameson, originalAlt: 'Jameson' },
+            { original: beefeater, originalAlt: 'Beefeater' },
+            { original: chandon, originalAlt: 'Chandon' },
+            { original: coca, originalAlt: 'Coca Cola' }
         ]
         return (
             <section>
@@ -35,7 +35,7 @@ class BrandConteiner extends Component {
                             />
                                 : <StyledDiv>
                                     {images.map((image, index) => {
-                                        return (<StyledImg src={image.original} key={index} />)
+                                        return (<StyledImg src={image.original}  alt={image.originalAlt} key={index} />)
                                     })}
                                 </StyledDiv>
                                 }                   
@@ -48,9 +48,11 @@ class BrandConteiner extends Component {
 
 const StyledDiv = styled.div`
     width: 100%;
-    padding: 0 40px;
+    max-width: 1100px;
     display: flex;
     justify-content: space-between;
+    margin 0 auto;
+
 `
 
 const StyledImg = styled.img`

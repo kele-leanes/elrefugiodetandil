@@ -11,7 +11,7 @@
 
 .form {
     width: 280px;
-    height: -webkit-fill-available;
+    height: auto;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;

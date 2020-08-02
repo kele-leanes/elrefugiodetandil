@@ -77,6 +77,8 @@ const StyledHeader = styled.header`
     width: 100%;
     height: 80px;
     top: 0;
+    left: 0;
+    right: 0;
     padding: 10px 20px;
     z-index: 999;
     backdrop-filter: blur(4px);

@@ -23,29 +23,45 @@ class Contact extends Component {
         this.scrollToMyRef = this.scrollToMyRef.bind(this)
     }
 
-    componentDidMount() {
+  componentDidMount() {
       this.scrollToMyRef();
   }
 
   scrollToMyRef() {
     window.scrollTo(0, this.myRef.current.offsetTop)
   } 
-
-    validateEmail(email){
-        // eslint-disable-next-line
-        const pattern = /[a-zA-Z0-9]+[\.]?([a-zA-Z0-9]+)?[\@][a-z]{3,9}[\.][a-z]{2,5}/g;
-        const result = pattern.test(email);
-        if(result===true){
-          this.setState({
-            emailError:false,
-            email:email
-          })
-        } else{
-          this.setState({
-            emailError:true
-          })
-        }
+  
+  validateEmail(email){
+      // eslint-disable-next-line
+      const pattern = /[a-zA-Z0-9]+[\.]?([a-zA-Z0-9]+)?[\@][a-z]{3,9}[\.][a-z]{2,5}/g;
+      const result = pattern.test(email);
+      if(result===true){
+        this.setState({
+          emailError:false,
+          email:email
+        })
+      } else{
+        this.setState({
+          emailError:true
+        })
       }
+    }
+
+  validatePhone(phone){
+    // eslint-disable-next-line
+    const pattern = /^\d{7,}$/;
+    const result = pattern.test(phone);
+    if(result===true){
+      this.setState({
+        phoneError:false,
+        phone: phone
+      })
+    } else{
+      this.setState({
+        phoneError:true
+      })
+    }
+  }  
 
 
     handleChange(evt) {
@@ -67,22 +83,13 @@ class Contact extends Component {
             }
           }
           if(evt.target.name==='phone'){
-            if(evt.target.value==='' || evt.target.value===null ){
-              this.setState({
-                phoneError:true
-              })
-            } else {
-              this.setState({
-                phoneError:false,     
-                phone:evt.target.value
-              })
-            }
+            this.validatePhone(evt.target.value);
           }
           if(evt.target.name==='email'){
            this.validateEmail(evt.target.value);
           }
-          if(evt.target.name==='message'){
-            if(evt.target.value==='' || evt.target.value===null ){
+          if(evt.target.name === 'message'){
+            if(evt.target.value === '' || evt.target.value === null ){
               this.setState({
                 messageError:true
               })
@@ -92,8 +99,7 @@ class Contact extends Component {
                 message:evt.target.value
               })
             }
-          }
-          
+          }    
          if(this.state.nameError===false && this.state.phoneError===false &&
           this.state.emailError===false && this.state.messageError===false){
             this.setState({
@@ -114,7 +120,8 @@ class Contact extends Component {
                 phone: '',
                 message: '',
                 response: null,
-                textMsg: ''
+                textMsg: '',
+                isDisabled: true
             }
         )
     }
@@ -183,7 +190,7 @@ class Contact extends Component {
                     {this.state.emailError ? <span className='error-input'>ingrese un e-mail válido</span> : ''}
                     </label>
                     <label>
-                    telefono
+                    Teléfono
                         <input
                         type="tel"
                         name="phone"
@@ -194,7 +201,7 @@ class Contact extends Component {
                     {this.state.phoneError ? <span className='error-input'>ingrese un numero telefónico</span> : ''}
                     </label>
                     <label>
-                    mensaje
+                    Mensaje
                         <textarea
                         name="message"
                         value={this.state.message}

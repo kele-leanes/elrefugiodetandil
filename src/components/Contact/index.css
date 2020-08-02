@@ -46,7 +46,8 @@
     display: flex;
     flex-direction: column;
     margin: 10px;
-    height: 90px;
+    height: 100px;
+    font-family: ciutadella, cursive;
 }
 
 .form input:focus, .form textarea:focus {

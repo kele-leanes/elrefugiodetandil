@@ -14,7 +14,7 @@ function Footer() {
                     <p>El refugio | bar serrano</p>
                     <a href='https://g.page/elrefugiodetandil' target='_blank' rel="noopener noreferrer"><p>valle del picapedrero</p></a>
                     <p>tandil, argentina</p>
-                    <a href='mailto:elrefugiodetandil@gmail.com' className='email' target='_blank' rel="noopener noreferrer"><p>elrefugiodetandil@gmail.com</p></a>
+                    <a href='mailto:info@elrefugiodetandil.com.ar' className='email' target='_blank' rel="noopener noreferrer"><p>elrefugiodetandil@gmail.com</p></a>
                 </div>
                 <div className='contact-info'>
                     <Link to='/nosotros' ><p>Quienes somos</p></Link>

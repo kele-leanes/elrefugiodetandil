@@ -20,6 +20,7 @@ function VideoContainer() {
             <div className='video-container' ref={myRef}>
                 <Helmet>
                     <title>El Refugio | Bar Serrano</title>
+                    <meta name="description" content="Ubicado en el Valle del Picapedrero. Desde el 21 de Diciembre de 2017. El Refugio es una opción gastronómica en un ambiente natural, con los mejores paisajes de Tandil."/>
                 </Helmet>
                 {!videoLoaded && <Spinner />}
                 <video className='video-wrapper' 

@@ -6,6 +6,7 @@ import bondiola from './../../images/bondiola.jpg';
 import jameson from './../../images/jameson.jpg';
 import cerveza from './../../images/cerveza.jpg';
 import MediaCard from './ProductCard';
+import { Helmet } from 'react-helmet'
 
 const products = [
     { 
@@ -57,6 +58,10 @@ class Products extends Component {
     render(){
         return(
             <article className='main-container' ref={this.myRef}>
+                <Helmet>
+                    <title>Nuestra Carta | El Refugio</title>
+                    <meta name="description" content="Algunos de nuestros platos favoritos, todos cocidos en nuestra parrilla a leña." />
+                </Helmet>
                 {products.map((product,index) => <MediaCard 
                 key={index}
                 title={product.title} 

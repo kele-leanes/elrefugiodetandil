@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import rainbow from './../../images/rainbow.jpg';
 import valle from './../../images/valle-del-picapedrero.jpg'
 import Skeleton from '@material-ui/lab/Skeleton';
+import { Helmet } from 'react-helmet';
 
 class Company extends Component {
     constructor(props){
@@ -25,6 +26,10 @@ class Company extends Component {
     render(){
         return(
             <StyledArticle ref={this.myRef}>
+                <Helmet>
+                    <title>Quienes Somos | El Refugio</title>
+                    <meta name="description" content="Nuestra historia, veni a conocernos en el Valle del Picapedrero, Tandil" />
+                </Helmet>
                 <section>
                     <StyledFigure>
                         {this.state.loading && <Skeleton variant="rect"  height={250} /> }

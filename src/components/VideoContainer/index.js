@@ -3,7 +3,8 @@ import video from '../../videos/Refugio.mp4'
 import video_vertical from '../../videos/Refugio_Vertical.mp4'
 import { useMediaQuery } from 'react-responsive'
 import Spinner from './../Spinner';
-import './index.css'
+import { Helmet } from 'react-helmet'
+import './index.css';
 
 
 
@@ -17,6 +18,9 @@ function VideoContainer() {
     })
         return (
             <div className='video-container' ref={myRef}>
+                <Helmet>
+                    <title>El Refugio | Bar Serrano</title>
+                </Helmet>
                 {!videoLoaded && <Spinner />}
                 <video className='video-wrapper' 
                     onLoadedData={()=>setVideoLoaded(true)} 

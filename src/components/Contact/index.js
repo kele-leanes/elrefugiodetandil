@@ -3,6 +3,7 @@ import emailjs from 'emailjs-com'
 import ModalAlert from './../ModalAlert'
 import './index.css'
 import { CSSTransition } from 'react-transition-group';
+import { Helmet } from 'react-helmet'
 
 class Contact extends Component {
     constructor(props){
@@ -155,6 +156,10 @@ class Contact extends Component {
     render(){
         return(
             <div className='main-container' ref={this.myRef}>
+              <Helmet>
+                    <title>Contacto | El Refugio</title>
+                    <meta name="description" content="Escribinos un mensaje. Seguinos en nuestras redes sociales @elrefugiodetandil" />
+                </Helmet>
                 <CSSTransition
                     in={this.state.response}
                     timeout={350}

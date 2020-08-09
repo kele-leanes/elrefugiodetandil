@@ -44,7 +44,7 @@ footer {
 .social .fab {
     font-size: 20px;
     color: #ccc;
-    margin-right: 30px;
+    margin-right: 20px;
 }
 
 .image-gallery-image {
@@ -96,6 +96,11 @@ footer .email {
         margin-right: 10px;
         font-size: 16px;
         display: inline;
+    }
+
+    .social p {
+        text-align: left;
+        text-transform: uppercase;
     }
 }
 

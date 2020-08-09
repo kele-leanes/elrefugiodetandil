@@ -7,12 +7,14 @@ import Company from './components/Company'
 import { Switch, Route } from 'react-router-dom'
 import './App.css';
 import Products from './components/Products';
+import WhatsappBtn from './components/WhatsappBtn';
 
 
 function App() {
   return (
       <div className='main'>
         <Header />
+        <WhatsappBtn />
           <Switch>
             <Route exact path='/' component={VideoContainer} />
             <Route path='/nosotros' component={Company} />

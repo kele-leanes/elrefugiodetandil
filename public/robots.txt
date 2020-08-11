@@ -1,4 +1,4 @@
 # https://www.robotstxt.org/robotstxt.html
 User-agent: *
 Disallow:
-Sitemap: https://www.elrefugiodetandil.com.ar/public/sitemap.xml
+Sitemap: https://www.elrefugiodetandil.com.ar/sitemap.xml

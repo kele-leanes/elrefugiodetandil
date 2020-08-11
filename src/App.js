@@ -20,6 +20,7 @@ function App() {
             <Route path='/nosotros' component={Company} />
             <Route path='/productos' component={Products} />
             <Route path='/contacto' component={Contact} />
+            <Route component={VideoContainer}/>
           </Switch>
         <Footer />
       </div>
